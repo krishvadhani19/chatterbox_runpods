@@ -1,0 +1,140 @@
+{  
+  "title": "Chatterbox TTS",  
+  "description": "Zero-shot text-to-speech synthesis with emotion control and voice cloning capabilities",  
+  "type": "serverless",  
+  "category": "language",  
+  "iconUrl": "https://storage.googleapis.com/resemble-ai-docs-public-files/resemble_logo.svg",  
+  
+  "config": {  
+    "runsOn": "GPU",  
+    "containerDiskInGb": 25,  
+    "gpuIds": "ADA_24",  
+    "gpuCount": 1,  
+    "allowedCudaVersions": [  
+      "12.7", "12.6", "12.5", "12.4",  
+      "12.3", "12.2", "12.1"  
+    ],  
+  
+    "presets": [  
+      {  
+        "name": "Default TTS",  
+        "defaults": {  
+          "text": "What does the fox say?",  
+          "exaggeration": 0.5,  
+          "cfg_weight": 0.5,  
+          "temperature": 0.8,  
+          "repetition_penalty": 1.2,  
+          "min_p": 0.05,  
+          "top_p": 1.0  
+        }  
+      },  
+      {  
+        "name": "Expressive Speech",  
+        "defaults": {  
+          "text": "What a wonderful day it is today!",  
+          "exaggeration": 0.7,  
+          "cfg_weight": 0.3,  
+          "temperature": 0.8,  
+          "repetition_penalty": 1.2,  
+          "min_p": 0.05,  
+          "top_p": 1.0  
+        }  
+      }  
+    ],  
+  
+    "env": [  
+      {  
+        "key": "text",  
+        "input": {  
+          "name": "Text to Synthesize",  
+          "type": "string",  
+          "description": "The text you want to convert to speech",  
+          "default": "What does the fox say?",  
+          "advanced": false  
+        }  
+      },  
+      {  
+        "key": "exaggeration",  
+        "input": {  
+          "name": "Exaggeration",  
+          "type": "number",  
+          "description": "Voice characteristic emphasis (Neutral = 0.5, extreme values can be unstable)",  
+          "min": 0.25,  
+          "max": 2.0,  
+          "default": 0.5,  
+          "advanced": false  
+        }  
+      },  
+      {  
+        "key": "cfg_weight",  
+        "input": {  
+          "name": "CFG/Pace Control",  
+          "type": "number",  
+          "description": "Controls generation quality and pacing",  
+          "min": 0.2,  
+          "max": 1.0,  
+          "default": 0.5,  
+          "advanced": false  
+        }  
+      },  
+      {  
+        "key": "temperature",  
+        "input": {  
+          "name": "Temperature",  
+          "type": "number",  
+          "description": "Controls randomness in generation",  
+          "min": 0.05,  
+          "max": 5.0,  
+          "default": 0.8,  
+          "advanced": true  
+        }  
+      },  
+      {  
+        "key": "repetition_penalty",  
+        "input": {  
+          "name": "Repetition Penalty",  
+          "type": "number",  
+          "description": "Reduces token repetition in generation",  
+          "min": 1.0,  
+          "max": 2.0,  
+          "default": 1.2,  
+          "advanced": true  
+        }  
+      },  
+      {  
+        "key": "min_p",  
+        "input": {  
+          "name": "Min P",  
+          "type": "number",  
+          "description": "Minimum probability threshold for sampling",  
+          "min": 0.0,  
+          "max": 1.0,  
+          "default": 0.05,  
+          "advanced": true  
+        }  
+      },  
+      {  
+        "key": "top_p",  
+        "input": {  
+          "name": "Top P",  
+          "type": "number",  
+          "description": "Nucleus sampling parameter",  
+          "min": 0.0,  
+          "max": 1.0,  
+          "default": 1.0,  
+          "advanced": true  
+        }  
+      },  
+      {  
+        "key": "audio_prompt_path",  
+        "input": {  
+          "name": "Reference Audio File Path",  
+          "type": "string",  
+          "description": "Path to reference audio file for voice cloning (optional)",  
+          "default": "",  
+          "advanced": true  
+        }  
+      }  
+    ]  
+  }  
+}
