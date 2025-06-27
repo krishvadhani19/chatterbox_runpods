@@ -5,9 +5,11 @@ import torch
 import torchaudio as ta
 import base64
 import io
+import os  
 from chatterbox.tts import ChatterboxTTS
 
-# Detect the best available device
+os.environ.pop('HF_HUB_ENABLE_HF_TRANSFER', None)
+
 if torch.cuda.is_available():
     device = "cuda"
 elif torch.backends.mps.is_available():
