@@ -7,7 +7,7 @@
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 48,
-    "gpuIds": "NVIDIA L40S",
+    "gpuIds": "ADA_48_PRO",
     "gpuCount": 1,
     "allowedCudaVersions": [
       "12.8",
