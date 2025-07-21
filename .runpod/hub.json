@@ -1,0 +1,38 @@
+{
+  "title": "Chatterbox TTS",
+  "description": "Zero-shot text-to-speech synthesis with emotion control and voice cloning capabilities",
+  "type": "serverless",
+  "category": "audio",
+  "iconUrl": "https://storage.googleapis.com/resemble-ai-docs-public-files/resemble_logo.svg",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 48,
+    "gpuIds": "NVIDIA L40S",
+    "gpuCount": 1,
+    "allowedCudaVersions": [
+      "12.8",
+      "12.7",
+      "12.6",
+      "12.5",
+      "12.4",
+      "12.3",
+      "12.2",
+      "12.1",
+      "12.0"
+    ],
+    "presets": [
+      {
+        "name": "Default TTS",
+        "defaults": {
+          "text": "We're excited to introduce Chatterbox, our first production-grade open source TTS model. Licensed under MIT, Chatterbox has been benchmarked against leading closed-source systems like ElevenLabs, and is consistently preferred in side-by-side evaluations. Whether you're working on memes, videos, games, or AI agents, Chatterbox brings your content to life. It's also the first open source TTS model to support emotion exaggeration control, a powerful feature that makes your voices stand out. Try it now on our Hugging Face Gradio app. If you like the model but need to scale or fine tune it for higher accuracy, check out our competitively priced TTS service (link). It delivers reliable performance with ultra-low latency of sub 200ms—ideal for production use in agents, applications, or interactive media.",
+          "exaggeration": 0.5,
+          "cfg_weight": 0.5,
+          "temperature": 0.8,
+          "repetition_penalty": 1.2,
+          "min_p": 0.05,
+          "top_p": 1.0
+        }
+      }
+    ]
+  }
+}
