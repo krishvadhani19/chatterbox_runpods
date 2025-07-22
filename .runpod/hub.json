@@ -6,8 +6,8 @@
   "iconUrl": "https://storage.googleapis.com/resemble-ai-docs-public-files/resemble_logo.svg",
   "config": {
     "runsOn": "GPU",
-    "containerDiskInGb": 48,
-    "gpuIds": "ADA_48",
+    "containerDiskInGb": 24,
+    "gpuIds": "ADA_24",
     "gpuCount": 1,
     "allowedCudaVersions": [
       "12.8",

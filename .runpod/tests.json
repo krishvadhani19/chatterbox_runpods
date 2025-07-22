@@ -32,7 +32,7 @@
     }
   ],
   "config": {
-    "gpuTypeId": "ADA_48",
+    "gpuTypeId": "ADA_24",
     "gpuCount": 1,
     "allowedCudaVersions": [
       "12.8",
