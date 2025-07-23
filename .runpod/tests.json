@@ -32,7 +32,7 @@
     }
   ],
   "config": {
-    "gpuTypeId": "ADA_24",
+    "gpuTypeId": "NVIDIA GeForce RTX 4090",
     "gpuCount": 1
   }
 }
