@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "basic_tts_test",
+      "input": {
+        "text": "Hello, this is a test of the Chatterbox TTS system.",
+        "exaggeration": 0.5,
+        "cfg_weight": 0.5,
+        "temperature": 0.8
+      },
+      "timeout": 30000
+    },
+    {
+      "name": "expressive_speech_test",
+      "input": {
+        "text": "What a wonderful day it is today!",
+        "exaggeration": 0.7,
+        "cfg_weight": 0.3,
+        "temperature": 0.8
+      },
+      "timeout": 25000
+    },
+    {
+      "name": "long_text_test",
+      "input": {
+        "text": "We're excited to introduce Chatterbox, our first production-grade open source TTS model. Licensed under MIT, Chatterbox has been benchmarked against leading closed-source systems like ElevenLabs, and is consistently preferred in side-by-side evaluations. Whether you're working on memes, videos, games, or AI agents, Chatterbox brings your content to life. It's also the first open source TTS model to support emotion exaggeration control, a powerful feature that makes your voices stand out. Try it now on our Hugging Face Gradio app. If you like the model but need to scale or fine tune it for higher accuracy, check out our competitively priced TTS service (link). It delivers reliable performance with ultra-low latency of sub 200ms—ideal for production use in agents, applications, or interactive media.",
+        "exaggeration": 0.5,
+        "cfg_weight": 0.5,
+        "temperature": 0.8
+      },
+      "timeout": 45000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA L40S",
+    "gpuCount": 1
+  }
+}
